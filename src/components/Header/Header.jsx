@@ -1,9 +1,13 @@
+import { Container } from '../Container/Container';
+import { Navigation } from '../Navigation/Navigation';
 import styles from './Header.module.css';
 
 export const Header = () => {
   return (
-    <>
-      <h1 className={styles}>Header</h1>
-    </>
+    <header className={styles.header}>
+      <Container>
+        <Navigation />
+      </Container>
+    </header>
   );
 };
