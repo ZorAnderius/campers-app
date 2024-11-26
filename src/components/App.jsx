@@ -1,10 +1,13 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import { Layout } from './Layout/Layout';
-import { HomePage } from '../pages/HomePage/HomePage';
-import { CatalogPage } from '../pages/CatalogPage/CatalogPage';
-import { CamperPage } from '../pages/CamperPage/CamperPage';
-import { ErrorPage } from '../pages/ErrorPage/ErrorPage';
+
+import './App.css';
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('../pages/CatalogPage/CatalogPage'));
+const CamperPage = lazy(() => import('../pages/CamperPage/CamperPage'));
+const ErrorPage = lazy(() => import('../pages/ErrorPage/ErrorPage'));
 
 export const App = () => {
   return (
