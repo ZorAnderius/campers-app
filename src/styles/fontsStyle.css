@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ve8u31');
+  src:  url('fonts/icomoon.eot?ve8u31#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ve8u31') format('truetype'),
+    url('fonts/icomoon.woff?ve8u31') format('woff'),
+    url('fonts/icomoon.svg?ve8u31#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Map1:before {
+  content: "\e900";
+  color: #6c717b;
+}
+.icon-Property-1Default3:before {
+  content: "\e901";
+}
+.icon-Property-1Default2:before {
+  content: "\e902";
+}
+.icon-ion_water-outline:before {
+  content: "\e903";
+}
+.icon-hugeicons_gas-stove:before {
+  content: "\e904";
+}
+.icon-lucide_microwave:before {
+  content: "\e905";
+}
+.icon-solar_fridge-outline:before {
+  content: "\e906";
+}
+.icon-bi_grid-3x3-gap1:before {
+  content: "\e907";
+}
+.icon-bi_grid1:before {
+  content: "\e908";
+}
+.icon-bi_grid-1x21:before {
+  content: "\e909";
+}
+.icon-ph_shower:before {
+  content: "\e90a";
+}
+.icon-diagram1:before {
+  content: "\e90b";
+}
+.icon-wind1:before {
+  content: "\e90c";
+}
+.icon-tv1:before {
+  content: "\e90d";
+}
+.icon-list:before {
+  content: "\e913";
+}
+.icon-cup:before {
+  content: "\e914";
+}
+.icon-petrol:before {
+  content: "\e915";
+}

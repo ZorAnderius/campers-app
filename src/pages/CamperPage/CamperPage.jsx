@@ -1,9 +1,11 @@
 import styles from './CamperPage.module.css';
 
-export const CamperPage = () => {
+const CamperPage = () => {
   return (
     <>
       <h1 className={styles}>Camper Page</h1>
     </>
   );
 };
+
+export default CamperPage;
