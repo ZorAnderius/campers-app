@@ -11,7 +11,7 @@ const activeStyle = ({ isActive }) => {
 export const Navigation = () => {
   return (
     <nav className={styles['nav-container']}>
-      <Link to={ROUTE.home}>
+      <Link to={ROUTE.home} className={styles['nav-link']}>
         <img src={logoIcon} alt="Travel Truck Logo" />
       </Link>
 
