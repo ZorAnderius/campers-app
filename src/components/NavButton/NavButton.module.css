@@ -1,0 +1,21 @@
+.navigate {
+  display: flex;
+  max-width: 173px;
+  width: 100%;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  border-radius: 200px;
+  background-color: var(--active-red-color);
+  color: var(--white-color);
+  transition: background-color 0.5s ease-in;
+}
+
+.navigate:is(:hover, :focus) {
+  background-color: var(--pimary-red-color);
+}
