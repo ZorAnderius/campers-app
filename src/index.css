@@ -1,3 +1,4 @@
+@import url(./node_modules/modern-normalize/modern-normalize.css);
 @import url(./styles/variabels.css);
 @import url(./styles/fontsStyle.css);
 
@@ -41,5 +42,6 @@ img {
 }
 
 button {
+  display: block;
   cursor: pointer;
 }
