@@ -4,6 +4,9 @@
 
 .form {
   min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .location-container {
@@ -34,7 +37,7 @@
 }
 
 .location-input:is(:hover, :focus),
-.location-input:is(:hover, :focus) + .icon,
+.location-input:is(:hover, :focus) + svg,
 .active {
   color: var(--dark-color);
 }
@@ -49,11 +52,23 @@
   opacity: 0;
 }
 
-.icon {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  color: currentColor;
-  transition: color var(--transition-time) var(--transition-func);
+.filter-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.filter-block-title {
+  color: var(--dark-grey-color);
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.filter-block-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

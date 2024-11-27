@@ -12,5 +12,5 @@
   --black-color: #00000033;
 
   --transition-time: 0.5s;
-  --transition-func: ease-in;
+  --transition-func: ease-in-out;
 }

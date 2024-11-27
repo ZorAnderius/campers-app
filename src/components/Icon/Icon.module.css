@@ -1,0 +1,12 @@
+.filter {
+  fill: var(--dark-color);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  fill: currentColor;
+  transition: fill var(--transition-time) var(--transition-func);
+}

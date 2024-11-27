@@ -1,0 +1,39 @@
+.filter-btn {
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  box-shadow: transparent;
+  border: 1px solid var(--dark-white-color);
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  mix-blend-mode: multiply;
+}
+
+.filter-btn:is(:hover, :focus) {
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.55);
+}
+
+.icon-style {
+  font-size: 32px;
+  color: currentColor;
+}
+
+.filter-btn-title {
+  color: var(--dark-color);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: -0.08px;
+}
+
+.active {
+  border: 1px solid var(--active-red-color);
+}
