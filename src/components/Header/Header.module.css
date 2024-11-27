@@ -1,3 +1,20 @@
 .header {
+  position: fixed;
   background-color: var(--light-white-color);
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--medium-white-color);
+  box-shadow: none;
+  transition: background-color var(--transition-time),
+    box-shadow var(--transition-time);
+}
+
+.fixed {
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+  border-bottom: 1px solid var(--dark-white-color);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
 }
