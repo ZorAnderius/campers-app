@@ -10,4 +10,7 @@
   --dark-grey-color: #475467;
   --dark-color: #101828;
   --black-color: #00000033;
+
+  --transition-time: 0.5s;
+  --transition-func: ease-in;
 }

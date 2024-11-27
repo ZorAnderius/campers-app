@@ -20,7 +20,6 @@
 
 [class^='icon-'],
 [class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -29,19 +28,17 @@
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-Map1:before {
   content: '\e900';
-  color: #6c717b;
 }
-.icon-Property-1Default3:before {
+.icon-star:before {
   content: '\e901';
 }
-.icon-Property-1Default2:before {
+.icon-heart:before {
   content: '\e902';
 }
 .icon-ion_water-outline:before {
@@ -56,25 +53,25 @@
 .icon-solar_fridge-outline:before {
   content: '\e906';
 }
-.icon-bi_grid-3x3-gap1:before {
+.icon-bi_grid-3x3:before {
   content: '\e907';
 }
-.icon-bi_grid1:before {
+.icon-bi_grid:before {
   content: '\e908';
 }
-.icon-bi_grid-1x21:before {
+.icon-bi_grid-1x2:before {
   content: '\e909';
 }
 .icon-ph_shower:before {
   content: '\e90a';
 }
-.icon-diagram1:before {
+.icon-diagram:before {
   content: '\e90b';
 }
-.icon-wind1:before {
+.icon-wind:before {
   content: '\e90c';
 }
-.icon-tv1:before {
+.icon-tv:before {
   content: '\e90d';
 }
 .icon-list:before {
