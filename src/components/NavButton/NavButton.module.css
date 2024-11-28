@@ -1,8 +1,6 @@
 .navigate {
   display: flex;
-  max-width: 173px;
-  width: 100%;
-  padding: 16px;
+  padding: 16px 60px;
   justify-content: center;
   align-items: center;
   border: none;
@@ -14,8 +12,19 @@
   background-color: var(--active-red-color);
   color: var(--white-color);
   transition: background-color 0.5s ease-in;
+  align-self: start;
 }
 
 .navigate:is(:hover, :focus) {
   background-color: var(--pimary-red-color);
+}
+
+.review {
+  font-size: 16px;
+  color: var(--dark-color);
+}
+
+.review:is(:hover, :focus) {
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
 }

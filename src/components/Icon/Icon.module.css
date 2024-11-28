@@ -10,3 +10,11 @@
   fill: currentColor;
   transition: fill var(--transition-time) var(--transition-func);
 }
+
+.rating {
+  fill: var(--yellow-color);
+}
+
+.subscribe {
+  fill: currentColor;
+}
