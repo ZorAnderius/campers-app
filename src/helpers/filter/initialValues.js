@@ -1,0 +1,18 @@
+export const initialValues = {
+  location: '',
+  type: '',
+  kitchen: false,
+  bathroom: false,
+  TV: false,
+  AC: false,
+  refrigerator: false,
+  microwave: false,
+  radio: false,
+  gas: false,
+  water: false,
+  automatic: false,
+  manual: false,
+  petrol: false,
+  diesel: false,
+  hybrid: false,
+};

@@ -3,15 +3,18 @@ import { CamperList } from '../../components/CamperList/CamperList';
 import { Container } from '../../components/Container/Container';
 import { Filter } from '../../components/Filter/Filter';
 import styles from './CatalogPage.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getVehicles } from '../../redux/vehicles/operation';
+import { selectFilter } from '../../redux/filters/selector';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+
   useEffect(() => {
     const page = 1;
-    dispatch(getVehicles({ page }));
-  }, [dispatch]);
+    dispatch(getVehicles({ page, filter }));
+  }, [dispatch, filter]);
   return (
     <Container>
       <div className={styles['catalog-container']}>

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { correctionFilterValue } from '../../helpers/filter/correctionFilterValue';
 
 axios.defaults.baseURL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
 
@@ -9,9 +10,9 @@ export const getVehicles = createAsyncThunk(
     try {
       const response = await axios.get('/campers', {
         params: {
-          limit: 4,
           page,
-          ...filter,
+          limit: 4,
+          ...correctionFilterValue(filter),
         },
       });
       console.log(response);

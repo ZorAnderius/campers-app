@@ -7,18 +7,19 @@ import { vehicleEquipments } from '../../helpers/filter/vehicleEquipments';
 import { vehicleTypes } from '../../helpers/filter/vehicleTypes';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
-
-const initialValues = {
-  location: '',
-};
+import { useDispatch } from 'react-redux';
+import { changeFilter } from '../../redux/filters/slice';
+import { serializeFilterValues } from '../../helpers/filter/serializeFilterValues';
+import { initialValues } from '../../helpers/filter/initialValues';
 
 export const Filter = () => {
+  const dispatch = useDispatch();
   const locationId = useId();
   const equipmentId = useId();
   const typeId = useId();
 
   const handleSubmit = values => {
-    console.log(values);
+    dispatch(changeFilter(serializeFilterValues(values)));
   };
 
   return (
