@@ -11,6 +11,17 @@ export const vehiclesSlice = createSlice({
     setPage(state, action) {
       state.page = action.payload;
     },
+    addToFavourite(state, action) {
+      state.favorites.push(action.payload);
+    },
+    removeFromFavourite(state, action) {
+      const index = state.favorites.indexOf(
+        camper => camper.id === action.payload.id
+      );
+      if (index >= 0) {
+        state.favorites.slice(index, -1);
+      }
+    },
     resetVehicals() {
       return initialState;
     },
