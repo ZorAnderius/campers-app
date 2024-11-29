@@ -1,5 +1,5 @@
-import { Container } from '../../components/Container/Container';
-import { NavButton } from '../../components/NavButton/NavButton';
+import { Container } from '../../components/assets/Container/Container';
+import { NavButton } from '../../components/assets/NavButton/NavButton';
 import { ROUTE } from '../../constants/constants';
 import styles from './HomePage.module.css';
 

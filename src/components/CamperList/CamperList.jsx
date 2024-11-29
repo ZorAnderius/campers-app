@@ -7,12 +7,12 @@ import {
   selectTotalCampers,
 } from '../../redux/vehicles/selector';
 import styles from './CamperList.module.css';
-import { LoadMore } from '../LoadMore/LoadMore';
+import { LoadMore } from '../assets/LoadMore/LoadMore';
 import { useCallback, useMemo } from 'react';
 import { PAGINATION, ROUTE } from '../../constants/constants';
 import { setPage } from '../../redux/vehicles/slice';
 import { getVehicles } from '../../redux/vehicles/operation';
-import { NotifyEmpty } from '../NotifyEmpty/NotifyEmpty';
+import { NotifyEmpty } from '../assets/NotifyEmpty/NotifyEmpty';
 import { useNavigate } from 'react-router-dom';
 
 export const CamperList = () => {

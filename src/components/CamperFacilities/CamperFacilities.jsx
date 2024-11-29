@@ -1,4 +1,4 @@
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../assets/Icon/Icon';
 
 export const CamperFacilities = ({ info: { title, icon } }) => {
   return (

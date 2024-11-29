@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useField } from 'formik';
 
 import styles from './FilterBox.module.css';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../assets/Icon/Icon';
 
 export const FilterBox = ({ style, title, field, type }) => {
   const { name, value, checked } = field;

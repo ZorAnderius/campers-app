@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { CamperList } from '../../components/CamperList/CamperList';
-import { Container } from '../../components/Container/Container';
+import { Container } from '../../components/assets/Container/Container';
 import { Filter } from '../../components/Filter/Filter';
 import styles from './CatalogPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { serializeVehiclesData } from '../../helpers/camperCard/serializeCamperData';
-import { NavButton } from '../NavButton/NavButton';
+import { NavButton } from '../assets/NavButton/NavButton';
 
 import styles from './Camper.module.css';
 import { ROUTE } from '../../constants/constants';
 import { CamperFacilities } from '../CamperFacilities/CamperFacilities';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../assets/Icon/Icon';
 import { useCallback, useState } from 'react';
 
 export const Camper = ({ camper }) => {

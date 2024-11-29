@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { Container } from '../Container/Container';
-import { HeaderObserver } from '../HeaderObserver/HeaderObserver';
+import { Container } from '../assets/Container/Container';
+import { HeaderObserver } from '../assets/HeaderObserver/HeaderObserver';
 import { Navigation } from '../Navigation/Navigation';
 import styles from './Header.module.css';
 import clsx from 'clsx';
