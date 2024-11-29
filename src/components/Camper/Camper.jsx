@@ -79,7 +79,7 @@ export const Camper = ({ camper }) => {
           ))}
         </ul>
         <NavButton
-          type="navigate"
+          type="show-more"
           link={`${ROUTE.catalog}/${updatedVehicle.id}/${ROUTE.features}`}
         >
           Show more

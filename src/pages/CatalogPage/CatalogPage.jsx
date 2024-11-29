@@ -5,15 +5,17 @@ import { Filter } from '../../components/Filter/Filter';
 import styles from './CatalogPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVehicles } from '../../redux/vehicles/operation';
+import { selectPage } from '../../redux/vehicles/selector';
 import { selectFilter } from '../../redux/filters/selector';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
+  const page = useSelector(selectPage);
   const filter = useSelector(selectFilter);
 
   useEffect(() => {
-    dispatch(getVehicles({ page: 1, limit: 4, filter }));
-  }, [dispatch, filter]);
+    dispatch(getVehicles({ page, filter }));
+  }, [dispatch, page, filter]);
   return (
     <Container>
       <div className={styles['catalog-container']}>
