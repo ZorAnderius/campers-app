@@ -15,7 +15,7 @@ const HomePage = () => {
                 You can find everything you want in our catalog
               </p>
             </div>
-            <NavButton type={'navigate'} pathTo={ROUTE.catalog}>
+            <NavButton type={'navigate'} link={ROUTE.catalog}>
               View Now
             </NavButton>
           </div>

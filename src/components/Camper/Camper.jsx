@@ -54,7 +54,7 @@ export const Camper = ({ camper }) => {
               <NavButton
                 type="review"
                 link={{
-                  pathname: `${ROUTE.catalog}/${updatedVehicle.id}/${ROUTE}`,
+                  pathname: `${ROUTE.catalog}/${updatedVehicle.id}/${ROUTE.reviews}`,
                   state: { scrollToReviews: true },
                 }}
               >
@@ -80,7 +80,7 @@ export const Camper = ({ camper }) => {
         </ul>
         <NavButton
           type="navigate"
-          link={`${ROUTE.catalog}/${updatedVehicle.id}`}
+          link={`${ROUTE.catalog}/${updatedVehicle.id}/${ROUTE.features}`}
         >
           Show more
         </NavButton>

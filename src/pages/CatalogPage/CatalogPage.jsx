@@ -12,8 +12,7 @@ const CatalogPage = () => {
   const filter = useSelector(selectFilter);
 
   useEffect(() => {
-    const page = 1;
-    dispatch(getVehicles({ page, filter }));
+    dispatch(getVehicles({ page: 1, limit: 4, filter }));
   }, [dispatch, filter]);
   return (
     <Container>

@@ -17,8 +17,6 @@ export const correctionFilterValue = filter => {
   if (keys1.length !== keys2.length) return tempObj;
   for (const key of keys1) {
     if (!keys2.includes(key) || filter[key] !== initialState[key]) {
-      console.log('filter', filter[key]);
-      console.log('initialState', initialState[key]);
       tempObj[key] = filter[key];
     }
   }
