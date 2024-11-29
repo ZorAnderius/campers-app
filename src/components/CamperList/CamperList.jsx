@@ -8,7 +8,7 @@ import {
 } from '../../redux/vehicles/selector';
 import styles from './CamperList.module.css';
 import { LoadMore } from '../assets/LoadMore/LoadMore';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { PAGINATION, ROUTE } from '../../constants/constants';
 import { setPage } from '../../redux/vehicles/slice';
 import { getVehicles } from '../../redux/vehicles/operation';
@@ -23,6 +23,13 @@ export const CamperList = () => {
   const totalCampers = useSelector(selectTotalCampers);
   const page = useSelector(selectPage);
 
+  useEffect(() => {
+    if (error) {
+      if (!error.includes('404')) {
+        navigate(ROUTE.error);
+      }
+    }
+  }, [error, navigate]);
   const totalPages = useMemo(
     () => Math.ceil(totalCampers / PAGINATION.limit),
     [totalCampers]
@@ -37,26 +44,22 @@ export const CamperList = () => {
 
   return (
     <main className={styles['catalog-wrapper']}>
-      {!error ? (
-        campers && (
-          <>
-            <ul className={styles['camper-container']}>
-              {campers?.map(camper => (
-                <li key={camper.id} className={styles['camper-card']}>
-                  <Camper camper={camper} />
-                </li>
-              ))}
-            </ul>
-            {totalCampers > PAGINATION.limit && page <= totalPages - 1 && (
-              <LoadMore onClick={handleClick} />
-            )}
-          </>
-        )
-      ) : error.includes('404') ? (
-        <NotifyEmpty />
-      ) : (
-        navigate(ROUTE.error)
-      )}
+      {!error
+        ? campers && (
+            <>
+              <ul className={styles['camper-container']}>
+                {campers?.map(camper => (
+                  <li key={camper.id} className={styles['camper-card']}>
+                    <Camper camper={camper} />
+                  </li>
+                ))}
+              </ul>
+              {totalCampers > PAGINATION.limit && page <= totalPages - 1 && (
+                <LoadMore onClick={handleClick} />
+              )}
+            </>
+          )
+        : error.includes('404') && <NotifyEmpty />}
     </main>
   );
 };

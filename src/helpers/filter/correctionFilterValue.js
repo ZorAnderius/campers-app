@@ -16,7 +16,10 @@ export const correctionFilterValue = filter => {
 
   if (keys1.length !== keys2.length) return tempObj;
   for (const key of keys1) {
-    if (!keys2.includes(key) || filter[key] !== initialState[key]) {
+    if (
+      (!keys2.includes(key) || filter[key] !== initialState[key]) &&
+      filter[key]
+    ) {
       tempObj[key] = filter[key];
     }
   }
