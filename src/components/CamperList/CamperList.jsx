@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Camper } from '../Camper/Camper';
 import { selectCampers } from '../../redux/vehicles/selector';
 import styles from './CamperList.module.css';
+import { LoadMore } from '../LoadMore/LoadMore';
 
 export const CamperList = () => {
   const campers = useSelector(selectCampers);
@@ -19,6 +20,7 @@ export const CamperList = () => {
           })}
         </ul>
       )}
+      <LoadMore />
     </main>
   );
 };
