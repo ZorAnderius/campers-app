@@ -128,6 +128,6 @@
   transform: scale(1.1);
 }
 
-.activeSubscribe {
+.active-subscribe {
   color: var(--active-red-color);
 }

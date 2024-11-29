@@ -1,21 +1,37 @@
 import clsx from 'clsx';
-import { serializeVehiclesData } from '../../helpers/camperCard/serializeCamperData';
-import { NavButton } from '../assets/NavButton/NavButton';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import styles from './Camper.module.css';
 import { ROUTE } from '../../constants/constants';
 import { CamperFacilities } from '../CamperFacilities/CamperFacilities';
 import { Icon } from '../assets/Icon/Icon';
-import { useCallback, useState } from 'react';
+import { serializeVehiclesData } from '../../helpers/camperCard/serializeCamperData';
+import { NavButton } from '../assets/NavButton/NavButton';
+import {
+  addToFavourite,
+  removeFromFavourite,
+} from '../../redux/vehicles/slice';
+import { selectFavouriteCampers } from '../../redux/vehicles/selector';
+import styles from './Camper.module.css';
 
 export const Camper = ({ camper }) => {
   const [active, setActive] = useState(false);
+  const favouriteCampers = useSelector(selectFavouriteCampers);
+  const dispatch = useDispatch();
 
-  const handleClick = useCallback(() => {
-    setActive(!active);
-  }, [active]);
+  const handleClick = useCallback(
+    camper => {
+      setActive(!active);
+      if (active) {
+        dispatch(removeFromFavourite(camper));
+      } else {
+        dispatch(addToFavourite(camper));
+      }
+    },
+    [dispatch, active]
+  );
 
-  const updatedVehicle = serializeVehiclesData(camper, 'catalog');
+  const updatedCamper = serializeVehiclesData(camper, 'catalog');
   const {
     name,
     imgVehicle,
@@ -25,7 +41,12 @@ export const Camper = ({ camper }) => {
     location,
     description,
     facilities,
-  } = updatedVehicle;
+  } = updatedCamper;
+
+  useEffect(() => {
+    setActive(!!favouriteCampers?.find(({ id }) => id === camper.id));
+  }, [favouriteCampers, camper.id]);
+
   return (
     <>
       <div className={styles['thumb-img']}>
@@ -42,7 +63,7 @@ export const Camper = ({ camper }) => {
                   styles['subscribe-btn'],
                   active && styles['active-subscribe']
                 )}
-                onClick={handleClick}
+                onClick={() => handleClick(camper)}
               >
                 <Icon name="icon-heart" style={'subscribe'} size={24} />
               </button>
@@ -54,7 +75,7 @@ export const Camper = ({ camper }) => {
               <NavButton
                 type="review"
                 link={{
-                  pathname: `${ROUTE.catalog}/${updatedVehicle.id}/${ROUTE.reviews}`,
+                  pathname: `${ROUTE.catalog}/${updatedCamper.id}/${ROUTE.reviews}`,
                   state: { scrollToReviews: true },
                 }}
               >
@@ -80,7 +101,7 @@ export const Camper = ({ camper }) => {
         </ul>
         <NavButton
           type="show-more"
-          link={`${ROUTE.catalog}/${updatedVehicle.id}/${ROUTE.features}`}
+          link={`${ROUTE.catalog}/${updatedCamper.id}/${ROUTE.features}`}
         >
           Show more
         </NavButton>

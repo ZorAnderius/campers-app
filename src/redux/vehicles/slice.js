@@ -15,15 +15,15 @@ export const vehiclesSlice = createSlice({
       state.favorites.push(action.payload);
     },
     removeFromFavourite(state, action) {
-      const index = state.favorites.indexOf(
+      const index = state.favorites.findIndex(
         camper => camper.id === action.payload.id
       );
-      if (index >= 0) {
-        state.favorites.slice(index, -1);
+      if (index !== -1) {
+        state.favorites.splice(index, 1);
       }
     },
-    resetVehicals() {
-      return initialState;
+    resetVehicals(state) {
+      return { ...initialState, favorites: state.favorites };
     },
   },
   extraReducers: builder =>
@@ -43,5 +43,6 @@ export const vehiclesSlice = createSlice({
       ),
 });
 
-export const { setPage, resetVehicals } = vehiclesSlice.actions;
+export const { setPage, addToFavourite, removeFromFavourite, resetVehicals } =
+  vehiclesSlice.actions;
 export const vehiclesReducer = vehiclesSlice.reducer;
