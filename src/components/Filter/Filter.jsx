@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { changeFilter } from '../../redux/filters/slice';
 import { serializeFilterValues } from '../../helpers/filter/serializeFilterValues';
 import { initialValues } from '../../helpers/filter/initialValues';
-import { setPage } from '../../redux/vehicles/slice';
+import { resetVehicals } from '../../redux/vehicles/slice';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -20,8 +20,8 @@ export const Filter = () => {
   const typeId = useId();
 
   const handleSubmit = values => {
+    dispatch(resetVehicals());
     dispatch(changeFilter(serializeFilterValues(values)));
-    dispatch(setPage(1));
   };
 
   return (

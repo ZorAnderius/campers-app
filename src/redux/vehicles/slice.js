@@ -11,6 +11,9 @@ export const vehiclesSlice = createSlice({
     setPage(state, action) {
       state.page = action.payload;
     },
+    resetVehicals() {
+      return initialState;
+    },
   },
   extraReducers: builder =>
     builder
@@ -29,5 +32,5 @@ export const vehiclesSlice = createSlice({
       ),
 });
 
-export const { setPage } = vehiclesSlice.actions;
+export const { setPage, resetVehicals } = vehiclesSlice.actions;
 export const vehiclesReducer = vehiclesSlice.reducer;
