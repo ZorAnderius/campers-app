@@ -1,0 +1,19 @@
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: inherit;
+  letter-spacing: -0.08px;
+  padding: 16px 32px;
+  background-color: transparent;
+  border: 1px solid var(--dark-white-color);
+  transition: border-color var(--transition-time) var(--transition-func);
+}
+
+.load-more:is(:hover, :focus) {
+  border-color: var(--pimary-red-color);
+}

@@ -22,15 +22,3 @@
 .submit:is(:hover, :focus) {
   background-color: var(--pimary-red-color);
 }
-
-.load-more {
-  composes: btn;
-  padding: 16px 32px;
-  background-color: transparent;
-  border: 1px solid var(--dark-white-color);
-  transition: border-color var(--transition-time) var(--transition-func);
-}
-
-.load-more:is(:hover, :focus) {
-  border-color: var(--pimary-red-color);
-}

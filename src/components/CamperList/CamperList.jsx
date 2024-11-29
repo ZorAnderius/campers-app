@@ -8,12 +8,13 @@ import {
 } from '../../redux/vehicles/selector';
 import styles from './CamperList.module.css';
 import { LoadMore } from '../assets/LoadMore/LoadMore';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { PAGINATION, ROUTE } from '../../constants/constants';
 import { setPage } from '../../redux/vehicles/slice';
 import { getVehicles } from '../../redux/vehicles/operation';
 import { NotifyEmpty } from '../assets/NotifyEmpty/NotifyEmpty';
 import { useNavigate } from 'react-router-dom';
+import { scrollToLoad } from '../../helpers/scroll/scrollToTop';
 
 export const CamperList = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export const CamperList = () => {
   const error = useSelector(selectError);
   const totalCampers = useSelector(selectTotalCampers);
   const page = useSelector(selectPage);
+  const lodaMoreRef = useRef(null);
 
   useEffect(() => {
     if (error) {
@@ -30,6 +32,7 @@ export const CamperList = () => {
       }
     }
   }, [error, navigate]);
+
   const totalPages = useMemo(
     () => Math.ceil(totalCampers / PAGINATION.limit),
     [totalCampers]
@@ -38,7 +41,14 @@ export const CamperList = () => {
   const handleClick = useCallback(() => {
     if (page < totalPages) {
       dispatch(setPage(page + 1));
-      dispatch(getVehicles());
+      dispatch(getVehicles()).then(() => {
+        if (lodaMoreRef.current) {
+          const scrollPosition =
+            lodaMoreRef.current.getBoundingClientRect().top +
+            document.documentElement.scrollTop;
+          scrollToLoad(scrollPosition);
+        }
+      });
     }
   }, [dispatch, page, totalPages]);
 
@@ -55,7 +65,7 @@ export const CamperList = () => {
                 ))}
               </ul>
               {totalCampers > PAGINATION.limit && page <= totalPages - 1 && (
-                <LoadMore onClick={handleClick} />
+                <LoadMore ref={lodaMoreRef} onClick={handleClick} />
               )}
             </>
           )

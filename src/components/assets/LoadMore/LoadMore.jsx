@@ -1,9 +1,17 @@
-import { Button } from '../Button/Button';
+import { forwardRef } from 'react';
+import styles from './LoadMore.module.css';
 
-export const LoadMore = ({ onClick }) => {
+export const LoadMore = forwardRef(({ onClick }, ref) => {
   return (
-    <Button type="button" btnStyle="load-more" onClick={onClick}>
+    <button
+      ref={ref}
+      type="button"
+      className={styles['load-more']}
+      onClick={onClick}
+    >
       Load more
-    </Button>
+    </button>
   );
-};
+});
+
+LoadMore.displayName = 'LoadMore';
