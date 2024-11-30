@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { enUS } from 'date-fns/locale';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,12 +16,17 @@ const locale = {
   },
 };
 
-export const Calendar = ({ field, props, setFieldValue, validateField }) => {
+const Calendar = ({ field, props, setFieldValue, validateField, value }) => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
 
+  useEffect(() => {
+    if (value && value !== dateRange) {
+      setDateRange([null, null]);
+    }
+  }, [value]);
+
   const handleDateChange = update => {
-    console.log('Updated date range:', update);
     setDateRange(update);
     setFieldValue('dataBooking', update);
     validateField('dataBooking');
@@ -45,3 +50,5 @@ export const Calendar = ({ field, props, setFieldValue, validateField }) => {
     />
   );
 };
+
+export default Calendar;

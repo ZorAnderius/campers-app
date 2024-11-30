@@ -1,11 +1,11 @@
-import { useId } from 'react';
+import { useId, useState } from 'react';
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { InputTextarea } from 'primereact/inputtextarea';
-// import { useDispatch } from 'react-redux';
 import styles from './BookingField.module.css';
 import { Button } from '../assets/Button/Button';
-import { Calendar } from '../Calendar/Calendar';
+import Calendar from '../Calendar/Calendar';
+import NotificationModal from '../assets/NotificationModal/NotificationModal';
 
 const initialValues = {
   name: '',
@@ -36,25 +36,18 @@ export const BookingField = () => {
   const nameId = useId();
   const emailId = useId();
   const dateId = useId();
-  //   const dispatch = useDispatch();
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleSubmit = ({ name, email, dataBooking }, action) => {
-    // const nameCondition = name && name.trim() !== '';
-    // const emailCondition = email && email.trim() !== '';
-    // const dataBookingCondition = dataBooking;
-    console.log(name);
-    console.log(email);
-    console.log(dataBooking);
+    const nameCondition = name && name.trim() !== '';
+    const emailCondition = email && email.trim() !== '';
+    const dataBookingCondition = dataBooking[0] && dataBooking[1];
 
-    // if (nameCondition && emailCondition && dataBookingCondition) {
-    //   dispatch(
-    //     notify({
-    //       message: `Thank you ${name}! You journey will begin soon.`,
-    //       toastType: 'success',
-    //     })
-    //   );
-    // }
+    if (nameCondition && emailCondition && dataBookingCondition) {
+      setIsFormSubmitted(true);
+    }
     action.resetForm();
+    action.setFieldValue('dataBooking', [null, null]);
   };
   return (
     <div className={styles['booking-form']}>
@@ -69,7 +62,7 @@ export const BookingField = () => {
         validationSchema={bookingSchema}
         onSubmit={handleSubmit}
       >
-        {({ setFieldValue, validateField }) => (
+        {({ values, setFieldValue, validateField }) => (
           <Form className={styles['form']}>
             <label htmlFor={nameId} className={styles['input-wrap']}>
               <Field
@@ -103,6 +96,7 @@ export const BookingField = () => {
                 component={Calendar}
                 validateField={validateField}
                 setFieldValue={setFieldValue}
+                value={values.dataBooking}
               />
               <ErrorMessage
                 className={styles['error-msg']}
@@ -128,6 +122,12 @@ export const BookingField = () => {
           </Form>
         )}
       </Formik>
+      {isFormSubmitted && (
+        <NotificationModal
+          message="Form has been submitted successfully!"
+          onClose={() => setIsFormSubmitted(false)}
+        />
+      )}
     </div>
   );
 };
