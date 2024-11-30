@@ -22,3 +22,8 @@
 .submit:is(:hover, :focus) {
   background-color: var(--pimary-red-color);
 }
+
+.submitForm {
+  composes: submit;
+  align-self: center;
+}

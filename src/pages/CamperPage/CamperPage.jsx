@@ -8,6 +8,7 @@ import { CamperDetails } from '../../components/CamperDetails/CamperDetails';
 import Section from '../../components/assets/Section/Section';
 import styles from './CamperPage.module.css';
 import { CamperDetailsNavigation } from '../../components/CamperDetailsNavigation/CamperDetailsNavigation';
+import { BookingField } from '../../components/BookingFIeld/BookingField';
 
 const CamperPage = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const CamperPage = () => {
             <Suspense>
               <Outlet />
             </Suspense>
-            {/* <BookingForm /> */}
+            <BookingField />
           </div>
         </Container>
       </Section>
