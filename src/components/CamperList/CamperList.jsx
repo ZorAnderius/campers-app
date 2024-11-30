@@ -43,15 +43,12 @@ export const CamperList = () => {
   const handleClick = useCallback(() => {
     if (page < totalPages) {
       dispatch(setPage(page + 1));
-      dispatch(getVehicles()).then(() => {
-        if (lodaMoreRef.current) {
-          const scrollPosition =
-            lodaMoreRef.current.getBoundingClientRect().top +
-            document.documentElement.scrollTop -
-            margin;
-          scrollToLoad(scrollPosition);
-        }
-      });
+      dispatch(getVehicles());
+      const scrollPosition =
+        lodaMoreRef.current.getBoundingClientRect().top +
+        document.documentElement.scrollTop -
+        margin;
+      scrollToLoad(scrollPosition);
     }
   }, [dispatch, page, totalPages]);
 
