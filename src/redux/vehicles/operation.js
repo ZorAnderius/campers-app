@@ -20,3 +20,16 @@ export const getVehicles = createAsyncThunk(
     }
   }
 );
+
+export const getCamperById = createAsyncThunk(
+  'vehicle/ById',
+  async (id, thunkAPI) => {
+    try {
+      const response = await api.get(`/campers/${id}`);
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

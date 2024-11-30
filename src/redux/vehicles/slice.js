@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from './initialState';
-import { getVehicles } from './operation';
+import { getCamperById, getVehicles } from './operation';
 import { STATUS } from '../../constants/constants';
 import { handleFulfiled, handlePending, handleRejected } from './hendlers';
 
@@ -31,6 +31,9 @@ export const vehiclesSlice = createSlice({
       .addCase(getVehicles.fulfilled, (state, action) => {
         state.campers.push(...action.payload.items);
         state.totalCampers = action.payload.total;
+      })
+      .addCase(getCamperById.fulfilled, (state, action) => {
+        state.currentCamper = action.payload;
       })
       .addMatcher(action => action.type.endsWith(STATUS.pending), handlePending)
       .addMatcher(
