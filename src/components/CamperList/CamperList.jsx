@@ -16,6 +16,8 @@ import { NotifyEmpty } from '../assets/NotifyEmpty/NotifyEmpty';
 import { useNavigate } from 'react-router-dom';
 import { scrollToLoad } from '../../helpers/scroll/scrollToTop';
 
+const margin = 110;
+
 export const CamperList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -45,7 +47,8 @@ export const CamperList = () => {
         if (lodaMoreRef.current) {
           const scrollPosition =
             lodaMoreRef.current.getBoundingClientRect().top +
-            document.documentElement.scrollTop;
+            document.documentElement.scrollTop -
+            margin;
           scrollToLoad(scrollPosition);
         }
       });

@@ -1,0 +1,79 @@
+.catalog-wrapper {
+  display: grid;
+  grid-template-columns: 292px auto;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--dark-white-color);
+  width: 100%;
+  max-height: 368px;
+}
+
+.camper-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  width: 520px;
+  height: auto;
+}
+
+.camper-info-title-price {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.title-wrap {
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 135px;
+  align-items: center;
+}
+
+.camper-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 186px;
+  height: auto;
+}
+
+.rating-location-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: auto;
+}
+
+.facilities-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  max-height: 104px;
+  height: 100%;
+}
+
+.facilities-item {
+  border-radius: 100px;
+}
+
+.border-10 {
+  border-radius: 10px;
+}
+
+.border-100 {
+  border-radius: 100px;
+}
+
+.border-200 {
+  border-radius: 200px;
+}

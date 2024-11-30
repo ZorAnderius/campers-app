@@ -1,0 +1,55 @@
+.filter-skeleton {
+  width: 360px;
+  height: 100%;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.skeleton-location {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+
+.skeleton-filter-block {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skeleton-title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.skeleton-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: auto;
+}
+
+.filter-block-item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.border-12 {
+  border-radius: 12px;
+}
+
+.border-200 {
+  border-radius: 200px;
+}

@@ -5,11 +5,13 @@ import { Filter } from '../../components/Filter/Filter';
 import styles from './CatalogPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVehicles } from '../../redux/vehicles/operation';
-import { selectPage } from '../../redux/vehicles/selector';
+import { selectIsLoading, selectPage } from '../../redux/vehicles/selector';
 import { selectFilter } from '../../redux/filters/selector';
+import { SkeletonCatalog } from '../../components/assets/SkeletonCatalog/SkeletonCatalog';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
   const page = useSelector(selectPage);
   const filter = useSelector(selectFilter);
 
@@ -18,10 +20,14 @@ const CatalogPage = () => {
   }, [dispatch, page, filter]);
   return (
     <Container>
-      <div className={styles['catalog-container']}>
-        <Filter />
-        <CamperList />
-      </div>
+      {isLoading ? (
+        <SkeletonCatalog />
+      ) : (
+        <div className={styles['catalog-container']}>
+          <Filter />
+          <CamperList />
+        </div>
+      )}
     </Container>
   );
 };

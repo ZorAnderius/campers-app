@@ -6,4 +6,6 @@ export const selectTotalCampers = state => state.vehicles.totalCampers;
 
 export const selectPage = state => state.vehicles.page;
 
+export const selectIsLoading = state => state.vehicles.isLoading;
+
 export const selectError = state => state.vehicles.error;

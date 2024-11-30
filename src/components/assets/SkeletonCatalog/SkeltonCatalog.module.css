@@ -1,0 +1,16 @@
+.catalog-skeleton {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: calc(100vh - 120px);
+  gap: 64px;
+  padding: 48px 0;
+  overflow-y: hidden;
+}
+
+.campers-skeleton {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

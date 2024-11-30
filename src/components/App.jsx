@@ -1,11 +1,13 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout/Layout';
 import 'modern-normalize';
-import './App.css';
+import 'react-loading-skeleton/dist/skeleton.css';
+
+import { Layout } from './Layout/Layout';
 import { Features } from './Features/Features';
 import { Reviews } from './Reviews/Reviews';
 import { ROUTE } from '../constants/constants';
+import './App.css';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../pages/CatalogPage/CatalogPage'));
