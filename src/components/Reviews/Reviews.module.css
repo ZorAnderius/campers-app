@@ -1,0 +1,20 @@
+.review-list {
+  max-width: 631px;
+  width: 100%;
+  padding: 12px 0;
+  max-height: 588px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  overflow: scroll;
+}
+
+.review-list::-webkit-scrollbar {
+  display: none;
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

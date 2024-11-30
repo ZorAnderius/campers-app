@@ -18,3 +18,7 @@
 .subscribe {
   fill: currentColor;
 }
+
+.empty-rating {
+  fill: var(--medium-white-color);
+}
