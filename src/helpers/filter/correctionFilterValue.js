@@ -12,7 +12,7 @@ export const correctionFilterValue = filter => {
   }
 
   const keys1 = Object.keys(filter);
-  const keys2 = Object.keys(initialState);
+  const keys2 = Object.keys(initialState.filter);
 
   if (keys1.length !== keys2.length) return tempObj;
   for (const key of keys1) {

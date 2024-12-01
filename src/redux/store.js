@@ -19,10 +19,16 @@ const persistConfig = {
   whitelist: ['favorites'],
 };
 
+const persistConfigFilter = {
+  key: 'filter',
+  storage,
+  whitelist: ['filter'],
+};
+
 export const store = configureStore({
   reducer: {
     vehicles: persistReducer(persistConfig, vehiclesReducer),
-    filter: filterReducer,
+    filters: persistReducer(persistConfigFilter, filterReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
