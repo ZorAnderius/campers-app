@@ -1,23 +1,23 @@
 import clsx from 'clsx';
 import { Field, Form, Formik } from 'formik';
-import { useId } from 'react';
+import React, { useId } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import FilterField from '../FilterField/FilterField';
-import Button from '../assets/Button/Button';
-import Icon from '../assets/Icon/Icon';
 import { vehicleEquipments } from '../../helpers/filter/vehicleEquipments';
 import { vehicleTypes } from '../../helpers/filter/vehicleTypes';
 import { serializeFilterValues } from '../../helpers/filter/serializeFilterValues';
 import { initialValues } from '../../helpers/filter/initialValues';
 import { changeFilter, resetFilter } from '../../redux/filters/slice';
 import { resetVehicals } from '../../redux/vehicles/slice';
-import styles from './Filter.module.css';
 import { scrollToLoad } from '../../helpers/scroll/scrollToTop';
 import { isExist } from '../../helpers/filter/isExist';
 import { selectFilter } from '../../redux/filters/selector';
 import { serializeInitialValues } from '../../helpers/filter/serializeInitialValue';
+import FilterField from '../FilterField/FilterField';
+import Button from '../assets/Button/Button';
+import Icon from '../assets/Icon/Icon';
+import styles from './Filter.module.css';
 
-const Filter = () => {
+const Filter = React.memo(() => {
   const dispatch = useDispatch();
   const locationId = useId();
   const equipmentId = useId();
@@ -106,6 +106,8 @@ const Filter = () => {
       </Formik>
     </aside>
   );
-};
+});
+
+Filter.displayName = 'Filter';
 
 export default Filter;

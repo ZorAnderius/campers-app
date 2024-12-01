@@ -27,7 +27,7 @@ const SkeletonCamperCard = () => {
             .map(() => (
               <li key={nanoid()} className={styles['facilities-item']}>
                 <Skeleton
-                  width={124}
+                  width={121}
                   height={48}
                   className={styles['border-100']}
                 />
