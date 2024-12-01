@@ -27,3 +27,17 @@
   composes: submit;
   align-self: center;
 }
+
+.reset {
+  composes: btn;
+  max-width: 166px;
+  width: 100%;
+  padding: 16px;
+  color: var(--white-color);
+  background-color: var(--pimary-red-color);
+  transition: background-color var(--transition-time);
+}
+
+.reset:is(:hover, :focus) {
+  background-color: var(--active-red-color);
+}

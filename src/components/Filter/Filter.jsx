@@ -9,15 +9,18 @@ import { vehicleEquipments } from '../../helpers/filter/vehicleEquipments';
 import { vehicleTypes } from '../../helpers/filter/vehicleTypes';
 import { serializeFilterValues } from '../../helpers/filter/serializeFilterValues';
 import { initialValues } from '../../helpers/filter/initialValues';
-import { changeFilter } from '../../redux/filters/slice';
+import { changeFilter, resetFilter } from '../../redux/filters/slice';
 import { resetVehicals } from '../../redux/vehicles/slice';
 import styles from './Filter.module.css';
+import { scrollToLoad } from '../../helpers/scroll/scrollToTop';
+import { isExist } from '../../helpers/filter/isExist';
 
 const Filter = () => {
   const dispatch = useDispatch();
   const locationId = useId();
   const equipmentId = useId();
   const typeId = useId();
+  const btnId = useId();
 
   const handleSubmit = values => {
     dispatch(resetVehicals());
@@ -27,7 +30,7 @@ const Filter = () => {
   return (
     <aside className={styles['filter']}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        {({ values }) => {
+        {({ values, setValues }) => {
           return (
             <Form className={styles['form']}>
               <label
@@ -72,9 +75,25 @@ const Filter = () => {
                   </FilterField>
                 </label>
               </fieldset>
-              <Button type={'submit'} btnStyle={'submit'}>
-                Submit
-              </Button>
+              <label htmlFor={btnId} className={styles['btn-container']}>
+                <Button type={'submit'} btnStyle={'submit'}>
+                  Submit
+                </Button>
+
+                {isExist(values) && (
+                  <Button
+                    type="button"
+                    btnStyle="reset"
+                    onClick={() => {
+                      setValues(initialValues);
+                      dispatch(resetFilter());
+                      scrollToLoad(0);
+                    }}
+                  >
+                    Reset
+                  </Button>
+                )}
+              </label>
             </Form>
           );
         }}
