@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getCamperById } from '../../redux/vehicles/operation';
 import Container from '../../components/assets/Container/Container';
@@ -12,10 +12,12 @@ import SimpleLoader from '../../components/assets/SimpleLoader/SimpleLoader';
 import styles from './CamperPage.module.css';
 import { resetVehicals } from '../../redux/vehicles/slice';
 import { resetFilter } from '../../redux/filters/slice';
+import { selectIsLoading } from '../../redux/vehicles/selector';
 
 const CamperPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     dispatch(resetVehicals());
@@ -26,7 +28,9 @@ const CamperPage = () => {
     dispatch(getCamperById(id));
   }, [dispatch, id]);
 
-  return (
+  return isLoading ? (
+    <SimpleLoader />
+  ) : (
     <main className={styles}>
       <Section css="details">
         <Container>
