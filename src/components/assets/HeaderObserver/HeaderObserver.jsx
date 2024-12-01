@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useMemo } from 'react';
 import styles from './HeaderObserver.module.css';
 
-export const HeaderObserver = forwardRef(({ setVisible }, ref) => {
+const HeaderObserver = forwardRef(({ setVisible }, ref) => {
   const handleEntries = entries => {
     const [entry] = entries;
     setVisible(entry.isIntersecting);
@@ -28,3 +28,5 @@ export const HeaderObserver = forwardRef(({ setVisible }, ref) => {
 });
 
 HeaderObserver.displayName = 'HeaderObserver';
+
+export default HeaderObserver;

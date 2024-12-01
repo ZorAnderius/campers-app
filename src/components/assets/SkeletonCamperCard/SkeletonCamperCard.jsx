@@ -1,8 +1,8 @@
 import Skeleton from 'react-loading-skeleton';
-import styles from './SkeletonCamperCard.module.css';
 import { nanoid } from 'nanoid';
+import styles from './SkeletonCamperCard.module.css';
 
-export const SkeletonCamperCard = () => {
+const SkeletonCamperCard = () => {
   return (
     <div className={styles['catalog-wrapper']}>
       <Skeleton width={292} height={320} className={styles['border-10']} />
@@ -39,3 +39,5 @@ export const SkeletonCamperCard = () => {
     </div>
   );
 };
+
+export default SkeletonCamperCard;

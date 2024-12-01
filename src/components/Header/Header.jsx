@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react';
-import { Container } from '../assets/Container/Container';
-import { HeaderObserver } from '../assets/HeaderObserver/HeaderObserver';
-import { Navigation } from '../Navigation/Navigation';
-import styles from './Header.module.css';
 import clsx from 'clsx';
+import { useRef, useState } from 'react';
+import Container from '../assets/Container/Container';
+import HeaderObserver from '../assets/HeaderObserver/HeaderObserver';
+import Navigation from '../Navigation/Navigation';
+import styles from './Header.module.css';
 
-export const Header = () => {
+const Header = () => {
   const [isVisible, setIsVisible] = useState();
   const observRef = useRef();
   return (
@@ -19,3 +19,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;

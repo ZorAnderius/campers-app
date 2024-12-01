@@ -1,8 +1,8 @@
 import Skeleton from 'react-loading-skeleton';
-import styles from './SkeletonFilter.module.css';
 import { nanoid } from 'nanoid';
+import styles from './SkeletonFilter.module.css';
 
-export const SkeletonFilter = () => {
+const SkeletonFilter = () => {
   return (
     <aside className={styles['filter-skeleton']}>
       <div className={styles['skeleton-location']}>
@@ -54,3 +54,5 @@ export const SkeletonFilter = () => {
     </aside>
   );
 };
+
+export default SkeletonFilter;

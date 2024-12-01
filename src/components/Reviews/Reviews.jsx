@@ -4,7 +4,7 @@ import ReviewCard from '../assets/ReviewCard/ReviewCard';
 
 import styles from './Reviews.module.css';
 
-export const Reviews = () => {
+const Reviews = () => {
   const camper = useSelector(selectCurrentCamper);
 
   return (
@@ -22,3 +22,5 @@ export const Reviews = () => {
     )
   );
 };
+
+export default Reviews;

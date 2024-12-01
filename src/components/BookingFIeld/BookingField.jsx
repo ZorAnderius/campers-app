@@ -2,10 +2,10 @@ import { useId, useState } from 'react';
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { InputTextarea } from 'primereact/inputtextarea';
-import styles from './BookingField.module.css';
-import { Button } from '../assets/Button/Button';
-import Calendar from '../Calendar/Calendar';
+import Button from '../assets/Button/Button';
 import NotificationModal from '../assets/NotificationModal/NotificationModal';
+import Calendar from '../Calendar/Calendar';
+import styles from './BookingField.module.css';
 
 const initialValues = {
   name: '',
@@ -32,7 +32,7 @@ const bookingSchema = Yup.object({
     .required('Date range is required'),
 });
 
-export const BookingField = () => {
+const BookingField = () => {
   const nameId = useId();
   const emailId = useId();
   const dateId = useId();
@@ -131,3 +131,5 @@ export const BookingField = () => {
     </div>
   );
 };
+
+export default BookingField;

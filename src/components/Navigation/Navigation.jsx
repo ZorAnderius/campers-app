@@ -1,14 +1,14 @@
+import clsx from 'clsx';
 import { Link, NavLink } from 'react-router-dom';
+import { ROUTE } from '../../constants/constants';
 import logoIcon from '../../assets/logo.svg';
 import styles from './Navigation.module.css';
-import clsx from 'clsx';
-import { ROUTE } from '../../constants/constants';
 
 const activeStyle = ({ isActive }) => {
   return clsx(styles['nav-link'], isActive && styles['active']);
 };
 
-export const Navigation = () => {
+const Navigation = () => {
   return (
     <nav className={styles['nav-container']}>
       <Link to={ROUTE.home}>
@@ -30,3 +30,5 @@ export const Navigation = () => {
     </nav>
   );
 };
+
+export default Navigation;

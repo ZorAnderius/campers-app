@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import { serializeVehiclesData } from '../../helpers/camperCard/serializeCamperData';
-import { Icon } from '../assets/Icon/Icon';
 import { selectCurrentCamper } from '../../redux/vehicles/selector';
-import { NavButton } from '../assets/NavButton/NavButton';
+import Icon from '../assets/Icon/Icon';
+import NavButton from '../assets/NavButton/NavButton';
 import { ROUTE } from '../../constants/constants';
 import styles from './CamperDetails.module.css';
 
-export const CamperDetails = () => {
+const CamperDetails = () => {
   const camper = useSelector(selectCurrentCamper);
   const serializeCamper = serializeVehiclesData(camper);
 
@@ -49,3 +49,4 @@ export const CamperDetails = () => {
     )
   );
 };
+export default CamperDetails;

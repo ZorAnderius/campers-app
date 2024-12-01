@@ -1,24 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Camper } from '../Camper/Camper';
+import { useNavigate } from 'react-router-dom';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   selectCampers,
   selectError,
   selectPage,
   selectTotalCampers,
 } from '../../redux/vehicles/selector';
-import styles from './CamperList.module.css';
-import { LoadMore } from '../assets/LoadMore/LoadMore';
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import Camper from '../Camper/Camper';
+import LoadMore from '../assets/LoadMore/LoadMore';
+import NotifyEmpty from '../assets/NotifyEmpty/NotifyEmpty';
 import { PAGINATION, ROUTE } from '../../constants/constants';
 import { setPage } from '../../redux/vehicles/slice';
 import { getVehicles } from '../../redux/vehicles/operation';
-import { NotifyEmpty } from '../assets/NotifyEmpty/NotifyEmpty';
-import { useNavigate } from 'react-router-dom';
 import { scrollToLoad } from '../../helpers/scroll/scrollToTop';
+import styles from './CamperList.module.css';
 
 const margin = 110;
 
-export const CamperList = () => {
+const CamperList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const campers = useSelector(selectCampers);
@@ -73,3 +73,5 @@ export const CamperList = () => {
     </main>
   );
 };
+
+export default CamperList;

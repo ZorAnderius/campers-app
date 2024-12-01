@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { Container } from '../../components/assets/Container/Container';
-import { NavButton } from '../../components/assets/NavButton/NavButton';
-import { ROUTE } from '../../constants/constants';
-import styles from './HomePage.module.css';
 import { useDispatch } from 'react-redux';
+import { ROUTE } from '../../constants/constants';
 import { resetVehicals } from '../../redux/vehicles/slice';
 import { resetFilter } from '../../redux/filters/slice';
+import Container from '../../components/assets/Container/Container';
+import NavButton from '../../components/assets/NavButton/NavButton';
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
   const dispatch = useDispatch();

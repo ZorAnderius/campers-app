@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import sprite from '../../../assets/icons.svg';
 import styles from './Icon.module.css';
 
-export const Icon = ({ name, style = '', size = 32 }) => {
+const Icon = ({ name, style = '', size = 32 }) => {
   return (
     <svg
       className={clsx(style && styles[style])}
@@ -14,3 +14,5 @@ export const Icon = ({ name, style = '', size = 32 }) => {
     </svg>
   );
 };
+
+export default Icon;

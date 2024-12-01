@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import styles from './LoadMore.module.css';
 
-export const LoadMore = forwardRef(({ onClick }, ref) => {
+const LoadMore = forwardRef(({ onClick }, ref) => {
   return (
     <button
       ref={ref}
@@ -15,3 +15,5 @@ export const LoadMore = forwardRef(({ onClick }, ref) => {
 });
 
 LoadMore.displayName = 'LoadMore';
+
+export default LoadMore;

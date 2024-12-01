@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import styles from './ErrorPage.module.css';
 import { ROUTE } from '../../constants/constants';
-// import { Container } from '../../components/assets/Container/Container';
+
+import styles from './ErrorPage.module.css';
 
 const ErrorPage = () => {
   return (
@@ -51,24 +51,3 @@ const ErrorPage = () => {
 };
 
 export default ErrorPage;
-
-// const ErrorPage = () => {
-//   return (
-//     <div className={styles['error-wrapper']}>
-//       <h1 className={styles['error-code']}>404</h1>
-//       <p className={styles['message']}>
-//         {' '}
-//         Oops! It seems like you are lost in the way.
-//       </p>
-//       <div className={styles['spaceship']}>
-//         <img
-//           src="https://cdn-icons-png.flaticon.com/512/3555/3555577.png"
-//           alt="Spaceship"
-//         />
-//       </div>
-//       <Link to={ROUTE.home} className={styles['button']}>
-//         Go Home
-//       </Link>
-//     </div>
-//   );
-// };

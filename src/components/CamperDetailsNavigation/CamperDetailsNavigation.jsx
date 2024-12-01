@@ -6,7 +6,7 @@ import styles from './CamperDetailsNavigation.module.css';
 const buildActive = ({ isActive }) =>
   clsx(styles['nav-link'], isActive && styles['active-link']);
 
-export const CamperDetailsNavigation = () => {
+const CamperDetailsNavigation = () => {
   return (
     <ul className={styles['detail-navigation']}>
       <li>
@@ -22,3 +22,5 @@ export const CamperDetailsNavigation = () => {
     </ul>
   );
 };
+
+export default CamperDetailsNavigation;

@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import CamperFacilities from '../CamperFacilities/CamperFacilities';
+import Icon from '../assets/Icon/Icon';
+import NavButton from '../assets/NavButton/NavButton';
 import { ROUTE } from '../../constants/constants';
-import { CamperFacilities } from '../CamperFacilities/CamperFacilities';
-import { Icon } from '../assets/Icon/Icon';
 import { serializeVehiclesData } from '../../helpers/camperCard/serializeCamperData';
-import { NavButton } from '../assets/NavButton/NavButton';
 import {
   addToFavourite,
   removeFromFavourite,
@@ -14,7 +13,7 @@ import {
 import { selectFavouriteCampers } from '../../redux/vehicles/selector';
 import styles from './Camper.module.css';
 
-export const Camper = ({ camper }) => {
+const Camper = ({ camper }) => {
   const [active, setActive] = useState(false);
   const favouriteCampers = useSelector(selectFavouriteCampers);
   const dispatch = useDispatch();
@@ -109,3 +108,5 @@ export const Camper = ({ camper }) => {
     </>
   );
 };
+
+export default Camper;

@@ -1,8 +1,8 @@
 import { Field } from 'formik';
+import FilterBox from '../FilterBox/FilterBox';
 import styles from './FilterField.module.css';
-import { FilterBox } from '../FilterBox/FilterBox';
 
-export const FilterField = ({ labelId, data, type, children }) => {
+const FilterField = ({ labelId, data, type, children }) => {
   return (
     <>
       <h2 className={styles['filter-box-title']}>{children}</h2>
@@ -26,3 +26,5 @@ export const FilterField = ({ labelId, data, type, children }) => {
     </>
   );
 };
+
+export default FilterField;

@@ -3,13 +3,13 @@ import { Outlet, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { getCamperById } from '../../redux/vehicles/operation';
-import { Container } from '../../components/assets/Container/Container';
-import { CamperDetails } from '../../components/CamperDetails/CamperDetails';
+import Container from '../../components/assets/Container/Container';
+import CamperDetails from '../../components/CamperDetails/CamperDetails';
 import Section from '../../components/assets/Section/Section';
+import CamperDetailsNavigation from '../../components/CamperDetailsNavigation/CamperDetailsNavigation';
+import BookingField from '../../components/BookingFIeld/BookingField';
+import SimpleLoader from '../../components/assets/SimpleLoader/SimpleLoader';
 import styles from './CamperPage.module.css';
-import { CamperDetailsNavigation } from '../../components/CamperDetailsNavigation/CamperDetailsNavigation';
-import { BookingField } from '../../components/BookingFIeld/BookingField';
-import { SimpleLoader } from '../../components/assets/SimpleLoader/SimpleLoader';
 
 const CamperPage = () => {
   const { id } = useParams();

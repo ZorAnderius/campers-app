@@ -4,11 +4,11 @@ import {
   serializeFacilitiesBadge,
   serializeVehicleDetails,
 } from '../../helpers/camperCard/serializeCamperData';
-import { CamperFacilities } from '../CamperFacilities/CamperFacilities';
+import CamperFacilities from '../CamperFacilities/CamperFacilities';
 import Title from '../assets/Title/Title';
 import styles from './Features.module.css';
 
-export const Features = () => {
+const Features = () => {
   const camper = useSelector(selectCurrentCamper);
   const facilities = serializeFacilitiesBadge(camper);
   const camperDetails = serializeVehicleDetails(camper);
@@ -39,3 +39,5 @@ export const Features = () => {
     </div>
   );
 };
+
+export default Features;

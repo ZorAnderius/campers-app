@@ -1,19 +1,19 @@
-import { Field, Form, Formik } from 'formik';
-import styles from './Filter.module.css';
-import { useId } from 'react';
 import clsx from 'clsx';
-import { FilterField } from '../FilterField/FilterField';
+import { Field, Form, Formik } from 'formik';
+import { useId } from 'react';
+import { useDispatch } from 'react-redux';
+import FilterField from '../FilterField/FilterField';
+import Button from '../assets/Button/Button';
+import Icon from '../assets/Icon/Icon';
 import { vehicleEquipments } from '../../helpers/filter/vehicleEquipments';
 import { vehicleTypes } from '../../helpers/filter/vehicleTypes';
-import { Button } from '../assets/Button/Button';
-import { Icon } from '../assets/Icon/Icon';
-import { useDispatch } from 'react-redux';
-import { changeFilter } from '../../redux/filters/slice';
 import { serializeFilterValues } from '../../helpers/filter/serializeFilterValues';
 import { initialValues } from '../../helpers/filter/initialValues';
+import { changeFilter } from '../../redux/filters/slice';
 import { resetVehicals } from '../../redux/vehicles/slice';
+import styles from './Filter.module.css';
 
-export const Filter = () => {
+const Filter = () => {
   const dispatch = useDispatch();
   const locationId = useId();
   const equipmentId = useId();
@@ -82,3 +82,5 @@ export const Filter = () => {
     </aside>
   );
 };
+
+export default Filter;
