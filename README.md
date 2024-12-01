@@ -70,12 +70,6 @@ pre-built backend API.
    npm install
    ```
 
-or
-
-```bash 
-yarn install
-```
-
 ## Running Locally
 
 ### Start the development server:
