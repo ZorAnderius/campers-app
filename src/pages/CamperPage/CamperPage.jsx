@@ -10,10 +10,17 @@ import CamperDetailsNavigation from '../../components/CamperDetailsNavigation/Ca
 import BookingField from '../../components/BookingFIeld/BookingField';
 import SimpleLoader from '../../components/assets/SimpleLoader/SimpleLoader';
 import styles from './CamperPage.module.css';
+import { resetVehicals } from '../../redux/vehicles/slice';
+import { resetFilter } from '../../redux/filters/slice';
 
 const CamperPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetVehicals());
+    dispatch(resetFilter());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getCamperById(id));

@@ -2,8 +2,18 @@ import { Link } from 'react-router-dom';
 import { ROUTE } from '../../constants/constants';
 
 import styles from './ErrorPage.module.css';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { resetFilter } from '../../redux/filters/slice';
+import { resetVehicals } from '../../redux/vehicles/slice';
 
 const ErrorPage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(resetVehicals());
+    dispatch(resetFilter());
+  }, [dispatch]);
+
   return (
     <div className={styles['error-wrapper']}>
       <h1 className={styles['error-title']}>404</h1>

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Field, Form, Formik } from 'formik';
 import { useId } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import FilterField from '../FilterField/FilterField';
 import Button from '../assets/Button/Button';
 import Icon from '../assets/Icon/Icon';
@@ -14,6 +14,8 @@ import { resetVehicals } from '../../redux/vehicles/slice';
 import styles from './Filter.module.css';
 import { scrollToLoad } from '../../helpers/scroll/scrollToTop';
 import { isExist } from '../../helpers/filter/isExist';
+import { selectFilter } from '../../redux/filters/selector';
+import { serializeInitialValues } from '../../helpers/filter/serializeInitialValue';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -21,15 +23,19 @@ const Filter = () => {
   const equipmentId = useId();
   const typeId = useId();
   const btnId = useId();
+  const filterValue = useSelector(selectFilter);
 
   const handleSubmit = values => {
     dispatch(resetVehicals());
     dispatch(changeFilter(serializeFilterValues(values)));
   };
 
+  const initialValuesData = filterValue
+    ? serializeInitialValues(filterValue)
+    : initialValues;
   return (
     <aside className={styles['filter']}>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik initialValues={initialValuesData} onSubmit={handleSubmit}>
         {({ values, setValues }) => {
           return (
             <Form className={styles['form']}>
