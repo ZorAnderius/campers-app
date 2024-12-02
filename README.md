@@ -64,11 +64,11 @@ pre-built backend API.
    cd campers-app
    ```
 
-3. Install dependencies: `bash npm install `
-
-or
-
-`bash yarn install `
+3. Install dependencies:
+  
+   ```bash
+   npm install
+   ```
 
 ## Running Locally
 
