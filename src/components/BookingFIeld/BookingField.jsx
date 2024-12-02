@@ -110,7 +110,7 @@ const BookingField = () => {
                   className={styles.comment}
                   placeholder="Comment"
                   autoResize={true}
-                  rows={3}
+                  rows={15}
                   value={field.value}
                   onChange={e => setFieldValue(field.name, e.target.value)}
                 />

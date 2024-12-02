@@ -76,7 +76,12 @@
 
 .comment {
   margin-bottom: 24px;
-  height: 118px;
+  max-height: 118px;
+  height: 100%;
+  pointer-events: auto;
+  overflow-y: auto;
+  resize: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .btnWrap {
